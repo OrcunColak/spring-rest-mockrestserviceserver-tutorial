@@ -15,10 +15,10 @@ import org.springframework.web.client.RestTemplate;
  * Test a service that uses RestTemplate
  */
 @SpringBootTest
-class QuoteServiceTest {
+class RestTemplateQuoteServiceTest {
 
     @Autowired
-    private QuoteService quoteService;
+    private RestTemplateQuoteService restTemplateQuoteService;
 
     @Autowired
     private RestTemplate restTemplate;
@@ -35,7 +35,7 @@ class QuoteServiceTest {
                 .andRespond(MockRestResponseCreators.withSuccess(mockQuote, MediaType.TEXT_PLAIN));
 
         // Invoke service method
-        String actualQuote = quoteService.getRandomQuote();
+        String actualQuote = restTemplateQuoteService.getRandomQuote();
 
         // Verify that the service method returned the expected quote
         Assertions.assertThat(actualQuote).isEqualTo(mockQuote);

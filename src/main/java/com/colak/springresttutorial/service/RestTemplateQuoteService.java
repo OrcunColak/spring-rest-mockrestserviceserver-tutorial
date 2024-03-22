@@ -6,7 +6,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Service
 @RequiredArgsConstructor
-public class QuoteService {
+public class RestTemplateQuoteService {
 
     private final RestTemplate restTemplate;
     public String getRandomQuote() {
